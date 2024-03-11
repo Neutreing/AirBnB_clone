@@ -4,7 +4,7 @@ import cmd
 
 
 class Console(cmd.Cmd):
-    """Simple command processor example."""
+    """Creates the HBNB command ineterpreter."""
 
     prompt = "(hbnb) "
 
@@ -13,6 +13,7 @@ class Console(cmd.Cmd):
         return True
 
     def emptyline(self):
+        """This command disables repition on last command and does nothing."""
         pass
 
     def do_quit(self, line):
