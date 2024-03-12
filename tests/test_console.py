@@ -4,12 +4,13 @@ import unittest
 from console import Console
 from unittest.mock import patch
 
+
 class TestConsole(unittest.TestCase):
     """This is the unittest for the console file"""
 
     def test_quit_command(self):
         with patch('builtins.print') as mock_print:
-            #test the code here
+            """test the code here"""
             console = Console()
             result = console.onecmd('EOF')
             self.assertTrue(result)
