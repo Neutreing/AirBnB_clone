@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import cmd
-from models.entities import User
+from models.users import User
 
 
 class Console(cmd.Cmd):
