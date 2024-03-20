@@ -3,6 +3,7 @@
 import unittest
 from models.users import User
 
+
 class TestUser(unittest.TestCase):
     """Unit tests for the User class"""
 
@@ -11,6 +12,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(user.name, "John Doe")
         self.assertEqual(user.email, "john@example.com")
         self.assertEqual(user.password, "password")
+
 
 if __name__ == "__main__":
     unittest.main()
