@@ -16,13 +16,6 @@ from unittest.mock import patch
 class TestConsole_prompting(unittest.TestCase):
     """Unittests for testing prompting of the command interpreter."""
 
-    def test_quit_command(self):
-        with patch('builtins.print') as mock_print:
-            """test the code here"""
-            console = Console()
-            result = console.onecmd('EOF')
-            self.assertTrue(result)
-
     def test_emptyline(self):
         """Test to check what happens when user inputs nothing"""
         with patch('builtins.print') as mock_print:
@@ -30,6 +23,10 @@ class TestConsole_prompting(unittest.TestCase):
             result = console.emptyline()
             self.assertIsNone(result)
             mock_print.assert_not_called()
+
+    def test_prompt_string(self):
+        console = Console()
+        self.assertEqual("(hbnb) ", console.prompt)
 
 
 class TestConsole_exit(unittest.TestCase):

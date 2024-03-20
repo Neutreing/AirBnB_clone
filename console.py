@@ -6,7 +6,11 @@ from models.users import User
 
 
 class Console(cmd.Cmd):
-    """Creates the HBNB command ineterpreter."""
+    """Creates the HBNB command ineterpreter.
+
+    Attributes:
+        prompt (str): the command prompt.
+        """
 
     prompt = "(hbnb) "
 
