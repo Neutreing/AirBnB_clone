@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+"""Defines the HBnB console."""
 import cmd
 from models.users import User
 
