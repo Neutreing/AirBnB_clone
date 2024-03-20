@@ -21,12 +21,8 @@ class Console(cmd.Cmd):
         """This command exits the interactive shell."""
         return True
 
-    def register_create_profile_command(self):
-        """Registers the CreateProfileCommand."""
-        self.add_command("create_profiles", CreateProfileCommand)
-
     def do_create_profile(self, args):
-        """Creats a new user profile"""
+        """Create a new user profile"""
         name = input("Enter your name: ")
         email = input("Enter your email: ")
         password = input("Enter your password: ")

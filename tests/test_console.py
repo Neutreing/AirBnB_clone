@@ -22,6 +22,16 @@ class TestConsole(unittest.TestCase):
             self.assertIsNone(result)
             mock_print.assert_not_called()
 
+    def test_create_profile_command(self):
+        with patch('builtins.input', side_effect=['John Doe', 'john@example.com', 'password']):
+            with patch('builtins.print') as mock_print:
+                console = Console()
+                console.onecmd('create_profile')
+                mock_print.assert_any_call("User profile created successfully: ")
+                mock_print.assert_any_call(f"Name: John Doe")
+                mock_print.assert_any_call(f"Email: john@example.com")
+
+
 
 if __name__ == "__main__":
     unittest.main()
