@@ -5,6 +5,7 @@ Unittest classes:
     TestConsole_prompting
     TestConsole_exit
     TestConsole_create
+    TestConsole_help
 """
 
 import unittest

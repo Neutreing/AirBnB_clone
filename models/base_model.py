@@ -15,10 +15,13 @@ class BaseModel:
 
     def __str__(self):
         """Method to represent an object as a string."""
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__, self.id,
+                                     self.__dict__)
 
     def save(self):
-        """Method to update the 'updated_at' attribute with the current datetime"""
+        """
+        Method to update the 'updated_at' attribute
+        with the current datetime"""
         self.updated_at = datetime.now()
 
     def to_dict(self):
@@ -28,4 +31,3 @@ class BaseModel:
         dict_copy['updated_at'] = self.created_at.isoformat()
         dict_copy['__class__'] = self.__class__.__name__
         return dict_copy
-
