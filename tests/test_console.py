@@ -8,6 +8,7 @@ Unittest classes:
 """
 
 import unittest
+import sys
 from console import Console
 from io import StringIO
 from unittest.mock import patch
@@ -63,6 +64,22 @@ class TestConsole_create(unittest.TestCase):
                         )
                 mock_print.assert_any_call(f"Name: John")
                 mock_print.assert_any_call(f"Email: j@example.com")
+
+
+class TestConsole_help(unittest.TestCase):
+    """Unittests for testing the help messages on the interpreter."""
+
+    def test_help_quit(self):
+        h = "This command exits the interactive shell."
+        with patch("sys.stdout", new=StringIO()) as output:
+            self.assertFalse(Console().onecmd("help quit"))
+            self.assertEqual(h, output.getvalue().strip())
+
+    def test_help_EOF(self):
+        h = "This command is an EOF marker, which exits the program cleanly."
+        with patch("sys.stdout", new=StringIO()) as output:
+            self.assertFalse(Console().onecmd("help EOF"))
+            self.assertEqual(h, output.getvalue().strip())
 
 
 if __name__ == "__main__":
