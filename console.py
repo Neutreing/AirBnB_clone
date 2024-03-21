@@ -5,7 +5,7 @@ import cmd
 from models.users import User
 
 
-class Console(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """Creates the HBNB command ineterpreter.
 
     Attributes:
@@ -39,10 +39,4 @@ class Console(cmd.Cmd):
 
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) > 1:
-        Console().onecmd(' '.join(sys.argv[1:]))
-    else:
-        console = Console()
-        console.cmdloop()
-    print()
+    HBNBCommand().cmdloop()
